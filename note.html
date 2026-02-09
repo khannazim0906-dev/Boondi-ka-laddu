@@ -11,16 +11,17 @@ body {
   background: linear-gradient(135deg, #ffe6ea, #ffc2d1);
   font-family: Arial, sans-serif;
   padding: 30px 20px;
-  overflow-y: auto; /* ✅ scroll enabled */
+  overflow-y: auto; /* ✅ scrolling enabled */
 }
 
-/* Wrapper allows scroll */
+/* Wrapper allows scrolling */
 .wrapper {
   display: flex;
   justify-content: center;
+  padding-bottom: 60px;
 }
 
-/* Card */
+/* Love note card */
 .card {
   background: white;
   max-width: 460px;
@@ -32,7 +33,6 @@ body {
   animation: fadeIn 1.2s ease forwards;
 }
 
-/* Text */
 h1 {
   color: #b3003b;
   font-size: 30px;
@@ -52,16 +52,11 @@ p {
   font-size: 20px;
 }
 
-/* Spotify */
-.spotify {
-  margin-top: 22px;
-}
-
-/* Valentine screen */
+/* Valentine final screen */
 .valentine {
   display: none;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 120px;
   animation: popIn 1.2s ease forwards;
 }
 
@@ -108,7 +103,7 @@ p {
 <body>
 
 <div class="wrapper">
-  <!-- 💌 LOVE NOTE CARD -->
+  <!-- 💌 LOVE NOTE -->
   <div class="card" id="loveCard">
     <h1>For My Boondi Ka Laddu 🍩❤️</h1>
 
@@ -136,30 +131,16 @@ p {
       Always yours,<br>
       Nazim ❤️
     </div>
-
-    <!-- 🎵 SPOTIFY EMBED -->
-    <div class="spotify">
-      <iframe
-        data-testid="embed-iframe"
-        style="border-radius:12px"
-        src="https://open.spotify.com/embed/track/4yNk9iz9WVJikRFle3XEvn?utm_source=generator"
-        width="100%"
-        height="352"
-        frameborder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
-    </div>
   </div>
 </div>
 
-<!-- 💖 FINAL VALENTINE SCREEN -->
+<!-- 💖 FINAL MESSAGE -->
 <div class="valentine" id="valentineScreen">
   <h2>Happy Valentine’s Day 💖</h2>
 </div>
 
 <script>
-/* After 16 seconds, hide note & show Valentine */
+/* After 16 seconds, fade note & show Valentine */
 setTimeout(() => {
   const card = document.getElementById("loveCard");
   const valentine = document.getElementById("valentineScreen");
