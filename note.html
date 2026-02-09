@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe6ea, #ffc2d1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  overflow: hidden;
+}
+
+.card {
+  background: white;
+  max-width: 440px;
+  padding: 32px 26px;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 1.2s ease forwards;
+  z-index: 2;
+}
+
+h1 {
+  color: #b3003b;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #333;
+}
+
+.signature {
+  margin-top: 25px;
+  font-weight: bold;
+  color: #b3003b;
+  font-size: 20px;
+}
+
+/* Valentine text */
+.valentine {
+  margin-top: 25px;
+  font-size: 26px;
+  color: #ff4d6d;
+  opacity: 0;
+  animation: popIn 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 22px;
+  animation: floatUp 6s linear forwards;
+  color: #ff4d6d;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>For My Boondi Ka Laddu 🍩❤️</h1>
+
+  <p>
+    You came into my life like a gentle breeze —<br>
+    unexpected, calm, and comforting.<br><br>
+
+    At first, I wasn’t sure whether to follow that breeze or let it pass.<br>
+    But I took that chance… and here we are.<br><br>
+
+    Almost six months together,<br>
+    and every moment with you has made me fall in love<br>
+    again and again — deeper and deeper.<br><br>
+
+    No matter what the future holds,<br>
+    always remember this —<br>
+    you have a very special place in my heart.<br><br>
+
+    What you made me feel is something<br>
+    I was pursuing my entire life,<br>
+    and somehow… I finally found it in you 💕<br><br>
+
+    Thank you for choosing me,<br>
+    for being my calm, my warmth,<br>
+    and my favorite feeling.
+  </p>
+
+  <div class="signature">
+    Always yours,<br>
+    Nazim ❤️
+  </div>
+
+  <div class="valentine">
+    Happy Valentine’s Day 💖
+  </div>
+</div>
+
+<script>
+/* Floating hearts animation */
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerText = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 18 + 18) + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
