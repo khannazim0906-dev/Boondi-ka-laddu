@@ -3,38 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Valentine ❤️</title>
-<style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 24px;
+  animation: floatUp 5s linear forwards;
+  color: #ff4d6d;
+  pointer-events: none;
 }
-h1 {
-  color: #b3003b;
-  font-size: 38px;
-  margin-bottom: 30px;
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
 }
-button {
-  padding: 15px 30px;
-  font-size: 22px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  position: relative;
-}
-#yes {
-  background: #ff4d6d;
-  color: white;
-}
-#no {
-  background: #ffffff;
-  position: absolute;
-}
-</style>
 </head>
 
 <body>
@@ -48,16 +35,41 @@ button {
 <script>
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
+
 let size = 22;
 
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * (window.innerWidth - 100);
-  const y = Math.random() * (window.innerHeight - 50);
+const funnyTexts = [
+  "NO 🙄",
+  "Are you serious? 😒",
+  "Try again 😏",
+  "Nope 😤",
+  "Still NO 😂",
+  "Nice try 😜",
+  "Not today 😈",
+  "You wish 😝"
+];
+
+noBtn.addEventListener("mouseover", runAway);
+noBtn.addEventListener("click", runAway);
+
+function runAway() {
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 60);
+
   noBtn.style.left = x + "px";
   noBtn.style.top = y + "px";
-  size += 4;
+
+  // funny text
+  noBtn.innerText = funnyTexts[Math.floor(Math.random() * funnyTexts.length)];
+
+  // grow YES button
+  size += 5;
   yesBtn.style.fontSize = size + "px";
-});
+  yesBtn.style.padding = (size / 2) + "px";
+
+  // shake effect
+  noBtn.style.transform = "rotate(" + (Math.random() * 20 - 10) + "deg)";
+}
 
 function goYes() {
   window.location.href = "memories.html";
@@ -66,3 +78,4 @@ function goYes() {
 
 </body>
 </html>
+
