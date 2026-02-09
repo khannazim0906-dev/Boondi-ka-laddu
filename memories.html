@@ -19,46 +19,36 @@ h1 {
   font-size: 32px;
 }
 
-/* COLLAGE GRID */
+/* PNG COLLAGE STYLE */
 .collage {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 500px;
+  max-width: 420px;
   margin: auto;
 }
 
 .collage img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  animation: zoomIn 1s ease;
-}
-
-/* Make one image big for style */
-.collage img.big {
-  grid-column: span 2;
-  height: 260px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  animation: fadeZoom 1s ease forwards;
 }
 
 /* Animation */
-@keyframes zoomIn {
+@keyframes fadeZoom {
   from {
-    transform: scale(0.9);
     opacity: 0;
+    transform: scale(0.95);
   }
   to {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
 }
 
 /* NEXT BUTTON */
 a {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 20px;
   text-decoration: none;
   background: #ff4d6d;
   color: white;
@@ -71,14 +61,11 @@ a {
 
 <body>
 
-<h1>Our Little World 💕</h1>
+<h1>Our Beautiful Memories 💕</h1>
 
 <div class="collage">
-  <img src="pic1.jpg" class="big">
-  <img src="pic2.jpg">
-  <img src="pic3.jpg">
-  <img src="pic4.jpg">
-  <img src="pic5.jpg">
+  <img src="collage1.png" alt="Our Memories 1">
+  <img src="collage2.png" alt="Our Memories 2">
 </div>
 
 <a href="note.html">One Last Thing 💌</a>
