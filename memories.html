@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Memories ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff0f3, #ffe6ea);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: #b3003b;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+/* COLLAGE GRID */
+.collage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.collage img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  animation: zoomIn 1s ease;
+}
+
+/* Make one image big for style */
+.collage img.big {
+  grid-column: span 2;
+  height: 260px;
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* NEXT BUTTON */
+a {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  background: #ff4d6d;
+  color: white;
+  padding: 14px 36px;
+  border-radius: 12px;
+  font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Our Little World 💕</h1>
+
+<div class="collage">
+  <img src="pic1.jpg" class="big">
+  <img src="pic2.jpg">
+  <img src="pic3.jpg">
+  <img src="pic4.jpg">
+  <img src="pic5.jpg">
+</div>
+
+<a href="note.html">One Last Thing 💌</a>
+
+</body>
+</html>
